@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Temperature Reader</title>
+      <script src="libraries/p5.js" type="text/javascript"></script>
+      <script src="libraries/p5.dom.js" type="text/javascript"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="sketch.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>Temperature Reader</h1>
+    <p>Choose a city:</p>
+
+    <select id="selectID">
+        <option value="London">London</option>
+        <option value="Beijing">Beijing</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Dubai">Dubai</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Moscow">Moscow</option>
+        <option value="Nairobi">Nairobi</option>
+        <option value="New York">New York</option>
+        <option value="Paris">Paris</option>
+        <option value="Rio">Rio de Janeiro</option>
+        <option value="Sydney">Sydney</option>
+    </select>
+
+    <br /><br />
+    <button id="submit" onClick="getWeatherData()">Submit</button>
+
+  </body>
+</html>
