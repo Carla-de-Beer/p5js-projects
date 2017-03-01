@@ -1,3 +1,7 @@
+// Carla de Beer
+// December 2016
+// Example of the use of the p5.js library with Require.js
+
 require(["sketch", "Bubble", "../libraries/p5"],
 	function(sketch, Bubble, p5) {
 	"use strict";

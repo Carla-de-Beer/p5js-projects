@@ -1,3 +1,9 @@
+// Carla de Beer
+// January 2017
+// Simulation of the A* path finder algorithm.
+// Based on Daniel Shiffman's Coding Train video example:
+// https://www.youtube.com/watch?v=aKYlikFAV4k&list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH&index=63
+
 var cols = 50;
 var rows = 50;
 var grid = new Array(cols);
