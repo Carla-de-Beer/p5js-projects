@@ -1,10 +1,11 @@
 // Carla de Beer
 // March 2017
 // Simulation of The Matrix's Digital Rain.
-// Based on Emily Xie's Coding Train video example.
+// Based on Emily Xie's Coding Train video example:
+// https://www.youtube.com/watch?v=S1TQCi9axzg
 
 var streams = [];
-var symbolSize = 25;
+var symbolSize = 24;
 
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
