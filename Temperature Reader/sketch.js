@@ -1,3 +1,7 @@
+// Carla de Beer
+// November 2016
+// Temperature reader for various cities.
+
 var weather;
 var apiURL = "";
 var api = "http://api.openweathermap.org/data/2.5/forecast/city?q=";
