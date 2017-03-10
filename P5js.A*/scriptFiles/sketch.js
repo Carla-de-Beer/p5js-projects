@@ -14,15 +14,14 @@ var path = [];
 var start, end;
 var w, h;
 var iter = 0;
-var distance = 0;
 
 var starS, starE;
 var metric;
 var isStart = false;
 
 function init() {
-	isStart = true;
-	var radios = document.getElementsByName('metric');
+	isStart = !isStart;
+	var radios = document.getElementsByName("metric");
 	if (radios[0].checked === true) {
 		metric = "E";
 	} else if (radios[1].checked === true) {
@@ -32,13 +31,15 @@ function init() {
 	}
 }
 
+function reload() {
+	window.location.reload(false);
+}
+
 function setup() {
 	createCanvas(600, 600);
-	randomSeed(5);
+	//randomSeed(5);
 	//frameRate(1);
-	resetSketch();
-	// var button = createButton("Reset");
-	// button.mousePressed(resetSketch);
+	setSketch();
 }
 
 function draw() {
@@ -121,7 +122,6 @@ function draw() {
 			openSet[i].show(color(0, 255, 0, 50));
 		}
 
-
 		// Find the path by working backwards
 		path = [];
 		var temp = current;
@@ -130,10 +130,6 @@ function draw() {
 			path.push(temp.previous);
 			temp = temp.previous;
 		}
-
-		// for (var i = 0; i < path.length; i++) {
-		// path[i].show(color(0, 0, 255));
-		//}
 
 		// Drawing path as continuous line
 		noFill();
@@ -147,13 +143,6 @@ function draw() {
 
 		iter++;
 
-		/*  for (var i = 0; i < path.length - 1; i++) {
-			distance += dist(path[i].i, path[i].j, path[i + 1].i, path[i + 1].j);
-		}
-
-		var para = document.getElementById("distance");
-		para.innerHTML = "Distance: " + distance.toFixed(3);*/
-
 		var para = document.getElementById("iter");
 		para.innerHTML = "Iteration: " + iter;
 
@@ -162,12 +151,9 @@ function draw() {
 	}
 }
 
-function resetSketch() {
+function setSketch() {
 	w = width / cols;
 	h = height / rows;
-
-	starS = new Star(w/2, w/2, w/2, w/4, 5);
-	starE = new Star(width - w/2, height - w/2, w/2, w/4, 5);
 
 	for (var i = 0; i < cols; i++) {
 		grid[i] = new Array(rows);
@@ -190,6 +176,9 @@ function resetSketch() {
 	start.wall = false;
 	end.wall = false;
 	openSet.push(start);
+
+	starS = new Star(w/2, w/2, w/2, w/4, 5);
+	starE = new Star(width - w/2, height - w/2, w/2, w/4, 5);
 }
 
 function removeFromArray(arr, elt) {
@@ -203,8 +192,7 @@ function removeFromArray(arr, elt) {
 function heuristic(a, b) {
 	if (metric === "E") {
 		return dist(a.i, a.j, b.i, b.j); // Euclidean distance
-	}
-	else if (metric === "M") {
+	} else if (metric === "M") {
 		return Math.abs(a.i - b.i) + Math.abs(a.j - b.j); // Manhattan metric
 	} else if (metric === "D") {
 		return 0

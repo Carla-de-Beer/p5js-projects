@@ -1,0 +1,21 @@
+body {
+    padding: 0;
+    margin: 40px;
+}
+
+.form, .text {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+.startButton {
+    width: 100px;
+    height: 30px;
+}
+
+.reloadButton {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+}
