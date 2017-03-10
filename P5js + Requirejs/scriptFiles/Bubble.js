@@ -4,8 +4,8 @@ define(["sketch"],
 
 		sketch.Bubble = function () {
 			var p = sketch.p;
-			this.x = p.random(80, p.width - 80);
-			this.y = p.random(80, p.height - 80);
+			this.x = p.random(50, p.width - 50);
+			this.y = p.random(50, p.height - 50);
 			this.r = p.random(50, 255);
 			this.g = p.random(100);
 			this.b = p.random(100, 255);

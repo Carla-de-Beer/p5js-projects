@@ -20,7 +20,7 @@ require(["sketch", "Bubble", "../libraries/p5"],
 			p.setup = function() {
 				// Need to use the sketch.p values to link the new sketch to the existing one
 				var p = sketch.p;
-				p.createCanvas(screen.width, screen.height - 100);
+				p.createCanvas(screen.width, screen.height);
 				for (var i = 0; i < numBubbles; ++i) {
 					bubbles.push(new Bubble());
 				}
@@ -34,10 +34,8 @@ require(["sketch", "Bubble", "../libraries/p5"],
 					bubbles[i].draw();
 					bubbles[i].move();
 				}
-
 			};
 
 		});
-
 });
 
