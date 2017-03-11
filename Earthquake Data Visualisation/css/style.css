@@ -1,0 +1,20 @@
+body {
+    padding: 0;
+    margin: 50px;
+}
+
+h4 {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    color: #464646;
+}
+
+p {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    color: #464646;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #9e2dce;
+}
