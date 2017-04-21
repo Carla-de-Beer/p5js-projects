@@ -1,12 +1,11 @@
-function Star(x, y, radius1, radius2, npoints) {
+function Star(x, y, radius1, radius2, nPoints) {
 	this.x = x;
 	this.y = y;
-	this.w = w;
 	this.radius1 = radius1;
 	this.radius2 = radius2;
-	this.npoints = npoints;
+	this.nPoints = nPoints;
 
-	var angle = TWO_PI / this.npoints;
+	var angle = TWO_PI / this.nPoints;
 	var halfAngle = angle/2.0;
 
 	this.show = function(col) {

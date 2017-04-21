@@ -19,6 +19,8 @@ var starS, starE;
 var metric;
 var isStart = false;
 
+var myCanvas;
+
 function init() {
 	isStart = !isStart;
 	var radios = document.getElementsByName("metric");
@@ -32,11 +34,12 @@ function init() {
 }
 
 function reload() {
-	window.location.reload(false);
+	window.location.reload(true);
 }
 
 function setup() {
-	createCanvas(600, 600);
+	myCanvas = createCanvas(600, 600);
+	myCanvas.position(window.innerWidth/3, 75);
 	//randomSeed(5);
 	//frameRate(1);
 	setSketch();
@@ -58,6 +61,12 @@ function draw() {
 
 			// Did I finish?
 			if (current === end) {
+				para = document.getElementById("closedSet");
+				para.innerHTML = "Closed set size: " + closedSet.length;
+
+				para = document.getElementById("openSet");
+				para.innerHTML = "Open set size: " + openSet.length;
+
 				noLoop();
 				console.log("Iterations: " + iter);
 				console.log("DONE!");
@@ -100,7 +109,9 @@ function draw() {
 			}
 			// Uh oh, no solution
 		} else {
-			console.log('No solution');
+			console.log("No solution");
+			para = document.getElementById("distance");
+			para.innerHTML = "No solution found";
 			noLoop();
 			return;
 		}
@@ -149,6 +160,7 @@ function draw() {
 		starS.show(color(40, 100, 230, 200));
 		starE.show(color(40, 100, 230, 200));
 	}
+
 }
 
 function setSketch() {

@@ -17,9 +17,16 @@
             <input type="radio" id="r2" name="metric" value="M">Manhattan Metric</input><br>
             <input type="radio" id="r3" name="metric" value="D">No metric / Dijkstra's Algorithm</input>
         </form>
+
+        <br/>
         <button id="startButton" class="startButton" onClick="init()">Start/Pause</button>
         <button class="reloadButton" onClick="reload()">Reload</button>
-        <p class="text" id="iter">Iteration: </p>
+
+        <br/><br/>
+        <p class="text" id="iter"></p>
+        <p class="text" id="distance"></p>
+        <p class="text" id="openSet"></p>
+        <p class="text" id="closedSet"></p>
     </body>
 
 </html>
