@@ -1,28 +1,21 @@
-define(["Boid", "Star", "variables", "sketch", "../libraries/p5", "./p5.dom"],
-	function(Boid, Star, variables, sketch, p5) {
+define(["Boid", "Star", "sketch", "../libraries/p5", "./p5.dom"],
+	function(Boid, Star, sketch, p5) {
 		"use strict";
 
-		var mainNode = document.getElementById("main");
-		var main = {};
-
-		main.p = new p5(function(p) {
+		new p5(function(p) {
 			var boids = [];
 			var food = [];
 			var poison = [];
-
 			var bestBoid = -1;
 			var oldestBoid = -1;
-
-			var margin = 35;
 			var foodCol, poisonCol;
+			var margin = sketch.margin;
 
 			p.setup = function() {
 				var p = sketch.p;
 
-				debugger;
-
-				var myCanvas = p.createCanvas(window.innerWidth - 360, 600);
-				myCanvas.position(325, 110);
+				var canvas = p.createCanvas(window.innerWidth - 360, 600);
+				canvas.position(325, 110);
 
 				for (var i = 0; i < 10; ++i) {
 					boids[i] = new Boid(p.random(p.width), p.random(p.height));
@@ -41,13 +34,13 @@ define(["Boid", "Star", "variables", "sketch", "../libraries/p5", "./p5.dom"],
 				}
 
 				foodCol = p.color(0, 255, 0);
-				poisonCol = p.color(255, 0, 0);
+				poisonCol = p.color(250, 65, 65);
 			};
 
 			p.draw = function() {
 				var p = sketch.p;
 
-				p.background(51);
+				p.background(70);
 				p.fill(255);
 				p.noStroke();
 
@@ -115,7 +108,7 @@ define(["Boid", "Star", "variables", "sketch", "../libraries/p5", "./p5.dom"],
 					}
 				}
 
-				variables.healthValue = bestHealth.toFixed(3);
+				sketch.healthValue = bestHealth.toFixed(3);
 			};
 
 			p.mousePressed = function() {
@@ -125,10 +118,10 @@ define(["Boid", "Star", "variables", "sketch", "../libraries/p5", "./p5.dom"],
 
 			p.keyReleased = function() {
 				if (p.keyCode === p.ENTER) {
-					variables.debug = !variables.debug;
+					sketch.debug = !sketch.debug;
 				}
 			};
 
-		}, mainNode);
+		}, null);
 
 	});

@@ -1,5 +1,5 @@
-define(["variables", "sketch", "../libraries/p5"],
-	function(variables, sketch, p5) {
+define(["sketch", "../libraries/p5"],
+	function(sketch, p5) {
 		"use strict";
 
 		var foodPlus = 0.3;
@@ -7,14 +7,10 @@ define(["variables", "sketch", "../libraries/p5"],
 		var mutationRate = 0.01;
 		var frameMinus = 0.005;
 		var foodCol, poisonCol;
-
-		var margin = 35;
-
-		//var debug = true;
+		var margin = sketch.margin;
+		var p = sketch.p;
 
 		return p5.Boid = function(x, y, dna) {
-			var p = sketch.p;
-
 			foodCol = p.color(0, 255, 0);
 			poisonCol = p.color(255, 0, 0);
 
@@ -25,7 +21,6 @@ define(["variables", "sketch", "../libraries/p5"],
 			this.maxspeed = 3;
 			this.maxforce = 0.5;
 			this.millis = (new Date).getTime();
-
 			this.health = 1;
 
 			this.dna = [];
@@ -78,8 +73,6 @@ define(["variables", "sketch", "../libraries/p5"],
 			};
 
 			this.boundaries = function() {
-				var p = sketch.p;
-
 				var desired = null;
 				if (this.position.x < margin) {
 					desired = p.createVector(this.maxspeed, this.velocity.y);
@@ -116,8 +109,6 @@ define(["variables", "sketch", "../libraries/p5"],
 			};
 
 			this.eat = function(list, nutrition, perception) {
-				var p = sketch.p;
-
 				var record = Infinity;
 				var closest = null;
 				for (var i = list.length-1; i >= 0; --i) {
@@ -156,8 +147,6 @@ define(["variables", "sketch", "../libraries/p5"],
 			// A method that calculates a steering force towards a target
 			// STEER = DESIRED MINUS VELOCITY
 			this.seek = function(target) {
-				var p = sketch.p;
-
 				// A vector pointing from the location to the target
 				//var desired = p5.Vector.sub(target, this.position);
 				var dx = target.x - this.position.x;
@@ -177,8 +166,6 @@ define(["variables", "sketch", "../libraries/p5"],
 			};
 
 			this.display = function(isBest) {
-				var p = sketch.p;
-
 				// Draw a triangle rotated in the direction of velocity
 				var theta = this.velocity.heading() + p.PI/2;
 				p.push();
@@ -191,7 +178,7 @@ define(["variables", "sketch", "../libraries/p5"],
 					p.noFill();
 				}
 
-				if (variables.debug) {
+				if (sketch.debug) {
 					if (isBest) {
 						p.fill(255, 40);
 					} else {

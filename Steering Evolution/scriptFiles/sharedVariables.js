@@ -2,11 +2,11 @@ define([],
 	function() {
 		"use strict";
 
-		var variables = {
+		var sharedVariables = {
 			debug: true,
 			healthValue: 0
 		};
 
-		return variables;
+		return sharedVariables;
 
 	});

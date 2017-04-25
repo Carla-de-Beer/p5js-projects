@@ -7,6 +7,11 @@ define(["../libraries/p5", "./p5.dom"],
 
 		});
 
+		// Shared global variables
+		sketch.debug = true;
+		sketch.healthValue = 0;
+		sketch.margin = 50;
+
 		return sketch;
 
 	});

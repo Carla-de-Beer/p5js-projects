@@ -1,28 +1,26 @@
-define(["sketch", "Star", "../libraries/p5", "./p5.dom"],
-	function(Sketch, Star, p5) {
+define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
+	function(Star, sketch, p5) {
 		"use strict";
 
 		var foodPlus = 0.3;
 		var poisonMinus = -0.75;
 		var frameMinus = 0.005;
 		var foodCol, poisonCol, textCol;
-		var legendNode = document.getElementById("legend");
 
 		new p5(function(p) {
-
 			p.setup = function() {
-				var myCanvas = p.createCanvas(270, 505);
-				myCanvas.position(40, 110);
+				var canvas = p.createCanvas(270, 505);
+				canvas.position(40, 110);
 
 				foodCol = p.color(0, 255, 0);
-				poisonCol = p.color(255, 0, 0);
+				poisonCol = p.color(250, 65, 65);
 				textCol = p.color(255, 220);
 			};
 
 			p.draw = function() {
-				p.background(90);
+				p.background(70);
 
-				var symbolVOffset = 40;
+				var symbolVOffset = 50;
 				var symbolHOffset = 30;
 				var textOffset = 80;
 
@@ -31,24 +29,21 @@ define(["sketch", "Star", "../libraries/p5", "./p5.dom"],
 				p.fill(foodCol);
 				p.ellipse(symbolHOffset + 7.5, symbolVOffset, 5, 5);
 
-				p.noStroke();
 				p.fill(textCol);
 				p.text("Food (health + " + foodPlus + ")", textOffset, symbolVOffset + 5);
 
 				// Poison
 				p.fill(poisonCol);
 				var star = new Star(symbolHOffset + 7.5, symbolVOffset + 40, 1.5, 9, 3);
-
 				star.show();
-				p.noStroke();
+
 				p.fill(textCol);
-				p.text("Poison (health - " + -1*poisonMinus + ")", textOffset, symbolVOffset + 45);
+				p.text("Poison (health - " + -1 * poisonMinus + ")", textOffset, symbolVOffset + 45);
 
 				// Healthy boid
 				p.fill(foodCol);
 				p.triangle(symbolHOffset, symbolVOffset + 80, 45, symbolVOffset + 85, symbolHOffset, symbolVOffset + 90);
 
-				p.noStroke();
 				p.fill(textCol);
 				p.text("Healthy boid", textOffset, symbolVOffset + 90);
 
@@ -56,7 +51,6 @@ define(["sketch", "Star", "../libraries/p5", "./p5.dom"],
 				p.fill(poisonCol);
 				p.triangle(symbolHOffset, symbolVOffset + 130, 45, symbolVOffset + 135, symbolHOffset, symbolVOffset + 140);
 
-				p.noStroke();
 				p.fill(textCol);
 				p.text("Dying boid", textOffset, symbolVOffset + 140);
 
@@ -78,15 +72,15 @@ define(["sketch", "Star", "../libraries/p5", "./p5.dom"],
 				p.fill(textCol);
 				p.text("Poison perception radius", textOffset, symbolVOffset + 240 + 5);
 
+				// Info messages
 				p.fill(textCol);
-				p.noStroke();
-				p.text("Each boid's health value decreases ", symbolHOffset, symbolVOffset + 300);
-
-				p.fill(textCol);
-				p.noStroke();
-				p.text(frameMinus + " per frame.", symbolHOffset, symbolVOffset + 320);
+				p.text("Each boid's health value automatically ", symbolHOffset, symbolVOffset + 300);
+				p.text("decreases " + frameMinus + " per frame.", symbolHOffset, symbolVOffset + 320);
+				p.text("Feed the Boids!", symbolHOffset, symbolVOffset + 390);
 			};
 
+			// Can't get the Star object to be rendered via requireJS. Not sure why.
+			// Replicating the Star object here for now.
 			function Star(x, y, radius1, radius2, nPoints) {
 				this.x = x;
 				this.y = y;
@@ -113,6 +107,6 @@ define(["sketch", "Star", "../libraries/p5", "./p5.dom"],
 				}
 			}
 
-		}, legendNode);
+		}, null);
 
 	});

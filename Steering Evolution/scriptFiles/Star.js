@@ -1,10 +1,10 @@
 define(["sketch", "../libraries/p5"],
-	function(Sketch, p5) {
+	function(sketch, p5) {
 		"use strict";
 
-		return p5.Star = function(x, y, radius1, radius2, nPoints) {
-			var p = Sketch.p;
+		var p = sketch.p;
 
+		return p5.Star = function(x, y, radius1, radius2, nPoints) {
 			this.x = x;
 			this.y = y;
 			this.radius1 = radius1;
@@ -15,8 +15,6 @@ define(["sketch", "../libraries/p5"],
 			var halfAngle = angle * 0.5;
 
 			this.show = function() {
-				var p = Sketch.p;
-
 				p.noStroke();
 				p.fill(255, 0, 0);
 				p.beginShape();
