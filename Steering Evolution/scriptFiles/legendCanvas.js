@@ -74,9 +74,9 @@ define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
 
 				// Info messages
 				p.fill(textCol);
-				p.text("Each boid's health value automatically ", symbolHOffset, symbolVOffset + 300);
-				p.text("decreases " + frameMinus + " per frame.", symbolHOffset, symbolVOffset + 320);
-				p.text("Feed the Boids!", symbolHOffset, symbolVOffset + 390);
+				p.text("Each boid's health value automatically ", symbolHOffset, symbolVOffset + 320);
+				p.text("decreases by " + frameMinus + " per frame.", symbolHOffset, symbolVOffset + 340);
+				p.text("Feed the Boids!", symbolHOffset, symbolVOffset + 400);
 			};
 
 			// Can't get the Star object to be rendered via requireJS. Not sure why.
