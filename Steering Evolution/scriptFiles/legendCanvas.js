@@ -7,6 +7,8 @@ define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
 		var frameMinus = 0.005;
 		var foodCol, poisonCol, textCol;
 
+		var elapsedT = 0;
+
 		new p5(function(p) {
 			p.setup = function() {
 				var canvas = p.createCanvas(270, 505);
@@ -20,7 +22,10 @@ define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
 			p.draw = function() {
 				p.background(70);
 
-				var symbolVOffset = 50;
+				elapsedT = new Date - sketch.start;
+				elapsedT = secondsToHms(elapsedT * 0.001);
+
+				var symbolVOffset = 35;
 				var symbolHOffset = 30;
 				var textOffset = 80;
 
@@ -74,10 +79,34 @@ define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
 
 				// Info messages
 				p.fill(textCol);
-				p.text("Each boid's health value automatically ", symbolHOffset, symbolVOffset + 320);
-				p.text("decreases by " + frameMinus + " per frame.", symbolHOffset, symbolVOffset + 340);
-				p.text("Feed the Boids!", symbolHOffset, symbolVOffset + 400);
+				p.text("Each boid's health value automatically ", symbolHOffset, symbolVOffset + 300);
+				p.text("decreases by " + frameMinus + " per frame.", symbolHOffset, symbolVOffset + 320);
+				p.text("Feed the Boids!", symbolHOffset, symbolVOffset + 350);
+
+				p.text("Food count: " + sketch.numFood, symbolHOffset, symbolVOffset + 380);
+				p.text("Poison count: " + sketch.numPoison, symbolHOffset, symbolVOffset + 400);
+				p.text("Boid count: " + sketch.numBoids, symbolHOffset, symbolVOffset + 420);
+				p.text(elapsedT, symbolHOffset, symbolVOffset + 440);
+
+				if (sketch.gameOver) {
+					p.noLoop();
+				}
 			};
+
+			function secondsToHms(time) {
+				time = Number(time);
+				var h = Math.floor(time / 3600);
+				var m = Math.floor(time % 3600 / 60);
+				var s = Math.floor(time % 3600 % 60);
+
+				if (m === 0 && h === 0) {
+					return s > 0 ? s + (" sec") : "";
+				} else {
+					var hDisplay = h > 0 ? h + (" : " ) : "";
+					var mDisplay = m > 0 ? m + (" : ") : "";
+					return hDisplay + mDisplay + s;
+				}
+			}
 
 			// Can't get the Star object to be rendered via requireJS. Not sure why.
 			// Replicating the Star object here for now.

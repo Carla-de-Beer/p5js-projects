@@ -18,7 +18,9 @@ define(["sketch", "../libraries/p5", "./p5.dom"],
 				p.textFont("Courier");
 				p.textSize(11);
 				p.text("Fittest boid's health value: " + sketch.healthValue, 22, p.height * 0.5 + 5);
+
 			};
+
 
 		}, null);
 

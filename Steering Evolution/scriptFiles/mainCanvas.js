@@ -109,6 +109,19 @@ define(["Boid", "Star", "sketch", "../libraries/p5", "./p5.dom"],
 				}
 
 				sketch.healthValue = bestHealth.toFixed(3);
+				sketch.numFood = food.length;
+				sketch.numPoison = poison.length;
+				sketch.numBoids = boids.length;
+
+				if (sketch.numBoids === 0) {
+					p.background(70);
+					p.textFont("Courier");
+					p.textSize(25);
+					p.fill(255, 200);
+					p.text("Game over!", p.width/2.43, p.height * 0.5 - 10);
+					sketch.gameOver = true;
+					p.noLoop();
+				}
 			};
 
 			p.mousePressed = function() {
