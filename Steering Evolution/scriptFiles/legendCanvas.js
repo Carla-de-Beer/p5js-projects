@@ -100,11 +100,14 @@ define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
 				var s = Math.floor(time % 3600 % 60);
 
 				if (m === 0 && h === 0) {
+					if (s === 0) {
+						return "0 sec";
+					}
 					return s > 0 ? s + (" sec") : "";
 				} else {
 					var hDisplay = h > 0 ? h + (" : " ) : "";
 					var mDisplay = m > 0 ? m + (" : ") : "";
-					return hDisplay + mDisplay + s;
+					return hDisplay + mDisplay + " " + s;
 				}
 			}
 
