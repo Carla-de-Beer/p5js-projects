@@ -107,7 +107,7 @@ define(["Star", "sketch", "../libraries/p5", "./p5.dom"],
 				} else {
 					var hDisplay = h > 0 ? h + (" : " ) : "";
 					var mDisplay = m > 0 ? m + (" : ") : "";
-					return hDisplay + mDisplay + " " + s;
+					return hDisplay + mDisplay + s;
 				}
 			}
 
