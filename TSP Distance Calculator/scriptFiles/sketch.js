@@ -57,7 +57,7 @@ function gotData(data) {
 
 	parse(data, lonList, latList, nameList);
 
-	for (var i = 0; i < latList.length; ++i) {
+	for (var i = 0, l = latList.length; i < l; ++i) {
 		tmpLon.push(lonList[i]);
 		tmpLat.push(latList[i]);
 	}
@@ -101,7 +101,7 @@ function draw() {
 	var cx = webMercatorX(clon);
 	var cy = webMercatorY(clat);
 
-	for (var i = 0; i < cityData.length; ++i) {
+	for (var i = 0, l = cityData.length; i < l; ++i) {
 		var lon = cityData[i].longitude;
 		var lat = cityData[i].latitude;
 
@@ -118,8 +118,8 @@ function draw() {
 
 	// Fill the bestTrue array with the true coordinate values,
 	// and in the sequence of the most optimal route
-	for (var i = 0; i < bestArray.length; ++i) {
-		for (var j = 0; j < bestArray.length; ++j) {
+	for (var i = 0, l = bestArray.length; i < l; ++i) {
+		for (var j = 0, m = bestArray.length; j < m; ++j) {
 			if (bestArray[i].name === pathTrue[j].name) {
 				var city = new City(0, 0, "");
 				city.copyCity(pathTrue[j]);
@@ -130,7 +130,7 @@ function draw() {
 
 	noStroke();
 	fill(80, 200);
-	for (var i = 0; i < numCities - 1; ++i) {
+	for (var i = 0, l = numCities - 1; i < l; ++i) {
 		sumHaversine += haversine(bestTrue[i].lon, bestTrue[i + 1].lon, bestTrue[i].lat, bestTrue[i + 1].lat);
 	}
 
@@ -141,8 +141,8 @@ function draw() {
 
 	if (generation >= maxGeneration) {
 		fill(80, 200);
-		textStyle(ITALIC);
-		text("Max. number of iterations reached", -4855, -230);
+		textStyle(BOLD);
+		text("(max. number of iterations reached)", -310, 200);
 		noLoop();
 	}
 }
@@ -167,7 +167,7 @@ function init() {
 	maxLat = tmpLat[0];
 	minLat = tmpLat[tmpLat.length - 1];
 
-	for (var i = 0; i < latList.length; ++i) {
+	for (var i = 0, l = latList.length; i < l; ++i) {
 		var cx = webMercatorX(clon);
 		var cy = webMercatorY(clat);
 		var x = webMercatorX(lonList[i]) - cx;

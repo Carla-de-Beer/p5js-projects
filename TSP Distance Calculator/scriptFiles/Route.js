@@ -35,7 +35,7 @@ function Route(path, isShuffle) {
 
 	this.sumDistance = function(path) {
 		var sum = 0.0;
-		for (var i = 0; i < path.length - 1; ++i) {
+		for (var i = 0, l = path.length - 1; i < l; ++i) {
 			var a = path[i];
 			var b = path[i + 1];
 			sum += this._distSq(a.lon, a.lat, b.lon, b.lat);

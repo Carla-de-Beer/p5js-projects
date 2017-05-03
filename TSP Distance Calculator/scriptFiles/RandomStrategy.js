@@ -19,7 +19,7 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 
 	this.calculateOptimal = function() {
 		var fitnessValue = 0.0;
-		for (var i = 0; i < this.populationList.length; ++i) {
+		for (var i = 0, l = this.populationList.length; i < l; ++i) {
 			fitnessValue = this.populationList[i].calculateFitness();
 			if (fitnessValue < this.optimalValue) {
 				var route = new Route([], false);
@@ -110,7 +110,7 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 		}
 
 		// Copy over second part of the chromosome
-		for (var i = rand; i < parentA.length; ++i) {
+		for (var i = rand, l = parentA.length; i < l; ++i) {
 			end.push(parentA[i]);
 		}
 
@@ -129,7 +129,7 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 		nums.sort();
 		var res = [];
 
-		for (var i = 0; i < nums.length; ++i) {
+		for (var i = 0, l = nums.length; i < l; ++i) {
 			res.push(parentB[nums[i]]);
 		}
 
