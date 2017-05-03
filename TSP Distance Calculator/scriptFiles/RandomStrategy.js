@@ -3,10 +3,10 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 
 	this.populationList = populationList.slice(0);
 	this.numPop = numPop;
-	this.crossoverRate = crossoverRate / 100;
-	this.mutationRate = mutationRate / 100;
+	this.crossoverRate = crossoverRate * 0.01;
+	this.mutationRate = mutationRate * 0.01;
 	this.numCities = numCities;
-	this.numElite = this.numPop * generationGap / 100;
+	this.numElite = this.numPop * generationGap * 0.01;
 	this.optimalRoute = null;
 	this.optimalValue = Infinity;
 	this.overallBestFitness = Infinity;
@@ -39,7 +39,6 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 
 	this.generatePopulation = function() {
 		var newPopulationList = [];
-		var nextPopulationList = [];
 
 		while (newPopulationList.length < this.numPop) {
 			var parentA = [];
@@ -72,18 +71,35 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 			}
 		}
 
-		nextPopulationList = newPopulationList.slice(0);
+		var nextPopulationList = newPopulationList.slice(0);
 
 		// Apply elitism if required; sort hashmaps by value
-		// if (numElite > 0) {
-		// 	populationList = this.createEliteList(nextPopulationList).slice(0);
-		// } else {
-		// 	// else, if no elitism applied, carry new population over as is
+		if (this.numElite > 0) {
+			this.populationList = this.createEliteList(nextPopulationList).slice(0);
+		} else {
+			// else, if no elitism applied, carry new population over as is
 		this.populationList = newPopulationList.slice(0);
-		// }
+		 }
 	};
 
-	 this.crossover = function(parentA, parentB) {
+	this.createEliteList = function(nextPopulationList) {
+		nextPopulationList.sort(function(a, b) {
+			return parseFloat(a.calculateFitness()) - parseFloat(b.calculateFitness());
+		});
+
+		this.populationList.sort(function(a, b) {
+			return parseFloat(a.calculateFitness()) - parseFloat(b.calculateFitness());
+		}).reverse();
+
+		var eliteList = this.populationList.slice(0);
+
+		for (var i = 0; i < this.numElite; ++i) {
+			eliteList[i] = nextPopulationList[i];
+		}
+		return eliteList;
+	};
+
+	this.crossover = function(parentA, parentB) {
 		var end = [];
 		var rand = Math.floor(random(this.numCities));
 		var child = [];
@@ -130,6 +146,11 @@ function RandomStrategy(populationList, numPop, crossoverRate, mutationRate, gen
 	this.getBestSolution = function() {
 		return this.optimalRoute.chromosome;
 	};
+
+
+	// ------------------------------------------------
+	// Internal methods
+	// ------------------------------------------------
 
 	this._swap = function(list, x, y) {
 		var b = list[x];

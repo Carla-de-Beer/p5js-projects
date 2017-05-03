@@ -1,11 +1,20 @@
-var minLon, maxLon, minLat, maxLat;
-var lonList = [],latList = [], nameList = [];
-var tmpLon = [], tmpLat = [];
+// Carla de Beer
+// Created: May 2017
+// Genetic algorithm to find an optimised solution to the Travelling Salesman Problem.
+// The sketch dynamically reads in city data from a file and calculates the shortest distance it can find, linking all cities.
+// The actual physical distance on the route, calculated as the Haversine distance, is also shown.
+// Specifiable parameters: crossover rate, mutation rate, popuation size, max. no. iterations, elitism generation gap.
+// City data obtained from: https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29
+// The crossover strategy makes use of Modified Order Crossover (MOX), as described in:
+// http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.9167&rep=rep1&type=pdf
+// Haversine distance formula:
+// http://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+// Map from MapBox; https://www.mapbox.com/api-documentation/#retrieve-a-sprite-image-or-json
 
-var numCities = 25;
+var numCities;
 var generation = 0;
 var maxGeneration = 350;
-var numPop = 5000;
+var numPop = 3000;
 var crossoverRate = 85.0;
 var mutationRate = 25.0;
 var generationGap = 25.0;
@@ -13,18 +22,22 @@ var sumHaversine = 0.0;
 var converge = 0;
 var randomStrategy;
 
+var minLon, maxLon, minLat, maxLat;
+var lonList = [],latList = [], nameList = [];
+var tmpLon = [], tmpLat = [];
+var pitch = 0;
+var clat = 38.27;
+var clon = -101.7431;
+var zoom = 3.45;
+
 var path = [], pathTrue = [];
 var populationList = [];
 var record = 0.0;
 
 var mapImage;
-var imageWidth = 1024, imageHeight = 512;
+var imageWidth = 512 * 2, imageHeight = 512;
+//var imageWidth = 512 * 2.5, imageHeight = 512 * 1.25;
 var cityData = [];
-
-var pitch = 0;
-var clat = 36.2672;
-var clon = -97.7431;
-var zoom = 3;
 
 function preload() {
 	loadJSON("sourceFiles/cities.json", gotData);
@@ -37,6 +50,10 @@ function preload() {
 
 function gotData(data) {
 	cityData = data;
+	numCities = data.length;
+
+	var header2 = document.getElementById("header2");
+	header2.innerText = "Travelling to the " + numCities + " largest cities in the US";
 
 	parse(data, lonList, latList, nameList);
 
@@ -117,14 +134,15 @@ function draw() {
 		sumHaversine += haversine(bestTrue[i].lon, bestTrue[i + 1].lon, bestTrue[i].lat, bestTrue[i + 1].lat);
 	}
 
-	console.log(numberWithCommas(sumHaversine.toFixed(3)));
+	//console.log(numberWithCommas(sumHaversine.toFixed(3)));
 	printResults(sumHaversine);
 
 	sumHaversine = 0.0;
 
 	if (generation >= maxGeneration) {
-		fill(255, 64, 64, 200);
-		text("Max. number of iterations reached", -485, 40);
+		fill(80, 200);
+		textStyle(ITALIC);
+		text("Max. number of iterations reached", -4855, -230);
 		noLoop();
 	}
 }
@@ -168,28 +186,33 @@ function init() {
 
 function haversine(lon1, lon2, lat1, lat2) {
 	var p = 0.017453292519943295;
-	var a = 0.5 - Math.cos((lat2 - lat1) * p) / 2
-		+ Math.cos(lat1 * p) * Math.cos(lat2 * p) * (1 - Math.cos((lon2 - lon1) * p)) / 2;
+	var a = 0.5 - Math.cos((lat2 - lat1) * p) * 0.5
+		+ Math.cos(lat1 * p) * Math.cos(lat2 * p) * (1 - Math.cos((lon2 - lon1) * p)) * 0.5;
 	return 12742 * Math.asin(Math.sqrt(a));
 }
 
 function printResults(haversineDistance) {
 	var offset = -485;
 	var indent = -480;
+	var top = 40;
+
+	textStyle(NORMAL);
 	haversineDistance = numberWithCommas(haversineDistance.toFixed(3));
-	text("Genetic Algorithm Parameters:", offset, 70);
-	text("*  Generations: " + numberWithCommas(generation), indent, 90);
-	text("*  Population size: " + numberWithCommas(numPop) + " individuals", indent, 110);
-	text("*  Crossover rate: " + crossoverRate + "%", indent, 130);
-	text("*  Mutation rate: " + mutationRate + "%", indent, 150);
+	text("Genetic Algorithm Parameters:", offset, top + 20);
+	text("*  Generations: " + numberWithCommas(generation), indent, top + 40);
+	text("*  Population size: " + numberWithCommas(numPop) + " individuals", indent, top + 60);
+	text("*  Crossover rate: " + crossoverRate + "%", indent, top + 80);
+	text("*  Mutation rate: " + mutationRate + "%", indent, top + 100);
 	text("*  Elitism generation gap: " + numberWithCommas(randomStrategy.numElite) +
-		" individuals", indent, 170);
-	text("Convergence at generation: " + converge, offset, 210);
-	text("Total distance travelled: " + haversineDistance + " km (Haversine distance)", offset, 230);
+		" individuals", indent, top + 120);
+	textStyle(BOLD);
+	text("Convergence at generation: " + converge, offset, top + 160);
+	text("Total distance travelled: " + haversineDistance + " km (Haversine distance)", offset, top + 180);
+	textStyle(NORMAL);
 }
 
-function numberWithCommas(x) {
-	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function numberWithCommas(value) {
+	return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function webMercatorX(lon) {
@@ -202,7 +225,7 @@ function webMercatorX(lon) {
 function webMercatorY(lat) {
 	lat = radians(lat);
 	var a = (256 / Math.PI) * Math.pow(2, zoom);
-	var b = Math.tan(Math.PI / 4 + lat / 2);
+	var b = Math.tan(Math.PI * 0.25 + lat * 0.5);
 	var c = Math.PI - Math.log(b);
 	return a * c;
 }
