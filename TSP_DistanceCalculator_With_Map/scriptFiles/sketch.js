@@ -74,7 +74,7 @@ function setup() {
 	// Centre the canvas
 	var cnv = createCanvas(imageWidth, imageHeight);
 	var x = (windowWidth - width) / 2;
-	var y = (windowHeight - height) / 2;
+	var y = (windowHeight - height) / 2 - 20;
 	cnv.position(x, y);
 }
 
