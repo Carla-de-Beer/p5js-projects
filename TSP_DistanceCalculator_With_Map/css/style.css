@@ -1,17 +1,6 @@
 html, body {
     height: 100%;
-}
-
-body {
     margin: 0;
-    display: flex;
-    margin-top: 80px;
-
-    /* This centers our sketch horizontally. */
-    justify-content: center;
-
-    /* This centers our sketch vertically. */
-    /*align-items: center;*/
 }
 
 p {
@@ -22,10 +11,10 @@ p {
 }
 
 #header1 {
-    top: 10px;
+    top: 15px;
     font-size: 15px;
 }
 #header2 {
-    top: 35px;
+    top: 40px;
     font-size: 13px;
 }

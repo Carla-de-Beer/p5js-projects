@@ -1,9 +1,9 @@
 // Carla de Beer
 // Created: May 2017
 // Genetic algorithm to find an optimised solution to the Travelling Salesman Problem.
-// The sketch dynamically reads in city data from a file and calculates the shortest distance it can find, linking all cities.
+// The program dynamically reads in city data from a file and calculates the shortest distance it can find, linking all cities.
 // The actual physical distance on the route, calculated as the Haversine distance, is also shown.
-// Specifiable parameters: crossover rate, mutation rate, popuation size, max. no. iterations, elitism generation gap.
+// Specifiable parameters: crossover rate, mutation rate, population size, max. no. iterations, elitism generation gap.
 // City data obtained from: https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29
 // The crossover strategy makes use of Modified Order Crossover (MOX), as described in:
 // http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.9167&rep=rep1&type=pdf
@@ -22,9 +22,7 @@ var sumHaversine = 0.0;
 var converge = 0;
 var randomStrategy;
 
-var minLon, maxLon, minLat, maxLat;
 var lonList = [],latList = [], nameList = [];
-var tmpLon = [], tmpLat = [];
 var pitch = 0;
 var clat = 38.27;
 var clon = -101.7431;
@@ -40,33 +38,44 @@ var imageWidth = 512 * 2, imageHeight = 512;
 var cityData = [];
 
 function preload() {
-	loadJSON("sourceFiles/cities.json", gotData);
+	loadJSON("sourceFiles/cities.json", processJSON);
 
-	// Load the map
+	// Dynamically load the map from the MapBox API
 	mapImage = loadImage("https://api.mapbox.com/styles/v1/mapbox/light-v9/static/" +
 		clon + "," + clat + "," + zoom + "," + pitch + "/" + imageWidth + "x" + imageHeight +
 		"?access_token=pk.eyJ1IjoiY2FkZWJlIiwiYSI6ImNqMDNvOWU5YzAwYXIzMm55YTNyMGtoNzcifQ.B7Y5DHMKO6o8tj2woXVxQw");
 }
 
-function gotData(data) {
+function processJSON(data) {
 	cityData = data;
 	numCities = data.length;
 
+	// Set header text
+	var header1 = document.getElementById("header1");
+	var text = "TSP Distance Calculator";
+	header1.innerText = text;
+	var textWidth = getWidthOfText(text, "Arial", "15px");
+	header1.style.left = window.innerWidth/2 - textWidth/2 + "px";
+
+	// Set header text
 	var header2 = document.getElementById("header2");
-	header2.innerText = "Travelling to the " + numCities + " largest cities in the US";
+	text = "Travelling to the " + numCities + " largest cities in the US";
+	header2.innerText = text;
+	textWidth = getWidthOfText(text, "Arial", "13px");
+	header2.style.left = window.innerWidth/2 - textWidth/2 + "px";
 
+	// Parse the JSON data and set the global arrays
 	parse(data, lonList, latList, nameList);
-
-	for (var i = 0, l = latList.length; i < l; ++i) {
-		tmpLon.push(lonList[i]);
-		tmpLat.push(latList[i]);
-	}
 
 	init();
 }
 
 function setup() {
-	createCanvas(imageWidth, imageHeight);
+	// Centre the canvas
+	var cnv = createCanvas(imageWidth, imageHeight);
+	var x = (windowWidth - width) / 2;
+	var y = (windowHeight - height) / 2;
+	cnv.position(x, y);
 }
 
 function draw() {
@@ -141,8 +150,6 @@ function draw() {
 
 	if (generation >= maxGeneration) {
 		fill(80, 200);
-		textStyle(BOLD);
-		text("(max. number of iterations reached)", -310, 200);
 		noLoop();
 	}
 }
@@ -159,13 +166,6 @@ function parse(data, list1, list2, list3) {
 }
 
 function init() {
-	tmpLon.sort();
-	tmpLat.sort();
-
-	maxLon = tmpLon[0];
-	minLon = tmpLon[tmpLon.length - 1];
-	maxLat = tmpLat[0];
-	minLat = tmpLat[tmpLat.length - 1];
 
 	for (var i = 0, l = latList.length; i < l; ++i) {
 		var cx = webMercatorX(clon);
@@ -205,14 +205,39 @@ function printResults(haversineDistance) {
 	text("*  Mutation rate: " + mutationRate + "%", indent, top + 100);
 	text("*  Elitism generation gap: " + numberWithCommas(randomStrategy.numElite) +
 		" individuals", indent, top + 120);
+
 	textStyle(BOLD);
 	text("Convergence at generation: " + converge, offset, top + 160);
-	text("Total distance travelled: " + haversineDistance + " km (Haversine distance)", offset, top + 180);
-	textStyle(NORMAL);
+	if (generation >= maxGeneration) {
+		text("Total distance travelled: " + haversineDistance + " km [Haversine distance]" + " : max. number of iterations reached", offset, top + 180);
+	} else {
+		text("Total distance travelled: " + haversineDistance + " km [Haversine distance]", offset, top + 180);
+	}
 }
 
 function numberWithCommas(value) {
 	return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function getWidthOfText(text, fontName, fontSize) {
+	if (text === undefined || fontName === undefined || fontSize === undefined) {
+		return 0;
+	}
+	// Create dummy span
+	this.e = document.createElement("span");
+	// Set font-size
+	this.e.style.fontSize = fontSize;
+	// Set font-face / font-family
+	this.e.style.fontFamily = fontName;
+	// Set text
+	this.e.innerHTML = text;
+	document.body.appendChild(this.e);
+	// Get width NOW, since the dummy span is about to be removed from the document
+	var textWidth = this.e.offsetWidth;
+	// Cleanup
+	document.body.removeChild(this.e);
+	// All right, we're done
+	return textWidth;
 }
 
 function webMercatorX(lon) {
