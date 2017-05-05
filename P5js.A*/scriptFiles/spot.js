@@ -1,4 +1,6 @@
 function Spot(i, j) {
+	"use strict";
+
 	this.i = i;
 	this.j = j;
 	this.f = 0;
@@ -8,9 +10,7 @@ function Spot(i, j) {
 	this.previous = undefined;
 	this.wall = false;
 
-	if (random(1) < 0.3) {
-		this.wall = true;
-	}
+	random(1) < 0.3 ? this.wall = true : this.wall = false;
 
 	this.show = function(col) {
 		if (this.wall) {

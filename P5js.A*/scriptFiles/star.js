@@ -1,4 +1,6 @@
 function Star(x, y, radius1, radius2, nPoints) {
+	"use strict";
+
 	this.x = x;
 	this.y = y;
 	this.radius1 = radius1;
