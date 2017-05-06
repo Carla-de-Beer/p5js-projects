@@ -1,4 +1,6 @@
 function Stream() {
+	"use strict";
+
 	this.symbols = [];
 	this.totalSymbols = round(random(5, 30));
 	this.speed = round(random(3, 10));
