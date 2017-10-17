@@ -8,10 +8,11 @@
 let spacing = 40;
 let x = spacing/2;
 let y = spacing/2;
+let radius = 25;
 
 function setup() {
 	createCanvas(1320, 640);
-	background(55);
+	background(51);
 }
 
 function draw() {
@@ -26,11 +27,11 @@ function draw() {
 	let b1 = random(15, 200);
 	let b2 = random(15, 200);
 
-	if (random(1) < 0.5) {
-        stroke(r1, g1, b1);
+	if (random(1) < 0.6) {
+		stroke(r1, g1, b1);
 		strokeWeight(w);
 		fill(r2, g2, b2);
-		ellipse(x, y, 20);
+		ellipse(x, y, radius);
 	}
 
 	x += spacing;

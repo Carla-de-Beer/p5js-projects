@@ -11,8 +11,8 @@ let spacing = 40;
 
 function setup() {
 	createCanvas(1340, 660);
-	console.log(window.innerWidth - 100);
-	background(55);
+	//console.log(window.innerWidth - 100);
+	background(51);
 }
 
 function draw() {
@@ -43,12 +43,12 @@ function draw() {
 
 	x += spacing;
 
-	if (x >= width-10) {
+	if (x >= width - 10) {
 		x = 10;
 		y += spacing;
 	}
 
-	if (y >= 650) {
+	if (y >= width - 10) {
 		noLoop();
 	}
 }
