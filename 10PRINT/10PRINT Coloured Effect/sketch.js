@@ -1,6 +1,6 @@
 // Carla de Beer
 // October 2017
-// Coloured pattern effect, based on the 10PRINT algorithm.
+// Coloured pattern effect. Variation on the 10PRINT algorithm.
 
 // Based on Daniel Shiffman's Coding Train video example:
 // https://www.youtube.com/watch?v=bEyTZ5ZZxZs
