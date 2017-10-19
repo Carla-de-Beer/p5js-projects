@@ -1,0 +1,17 @@
+// Chatbot's brain
+
+! version = 2.0
+
++ set #
+- <set num=<star>>
+
++ #
+* <star> > <get num> => pick a lower number &#x2B07
+* <star> < <get num> => pick a higher number &#x2B06
+* <star> == <get num> => you got it! &#x1f601 &#x1f601 &#x1f601 &#x1f64F &#x1f64F &#x1f64F
+
++ *
+- Guess a number between 0 and 11
+
++ #
+- Great guess! I like the number <star>!

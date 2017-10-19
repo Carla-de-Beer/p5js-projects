@@ -1,0 +1,36 @@
+body {
+    padding: 0;
+    margin: 50px;
+}
+
+h1 {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+}
+
+h6 {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-size: 110%;
+    color: #323232;
+}
+
+.output {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-size: 140%;
+    color: #646464;
+    position: absolute;
+    left: 180px;
+}
+
+.userInput {
+    position: absolute;
+    left: 180px;
+}
+
+.submit {
+    position: absolute;
+    left: 320px;
+}
