@@ -8,6 +8,6 @@ https://www.youtube.com/watch?v=u2D4sxh3MTs
 
 </br>
 <p align="center">
-  <img src="gif/animation.gif"/>
+ <img src="gif/animation.gif" width="500px"/>
 </p>
 
