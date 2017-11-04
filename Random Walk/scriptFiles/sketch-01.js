@@ -1,38 +1,31 @@
 // Carla de Beer
 // October 2017
-// Random walker with Lévy flight.
+// A single random walker with Lévy flight whose path colour is based on its screen position.
 
 // Based on Daniel Shiffman's Coding Train video example:
 // https://www.youtube.com/watch?v=bqF9w9TTfeo
 
 let pos, prev;
-let isDebug = false;
 
 function setup() {
 	let cnv = createCanvas(800, 600);
-	let x = (windowWidth - width) / 2;
-	let y = (windowHeight - height) / 2;
+	let x = (windowWidth - width) * 0.5;
+	let y = (windowHeight - height) * 0.5;
 	cnv.position(x, y);
+
 	background(255);
 	pos = createVector(200, 200);
 	prev = pos.copy();
-	noFill();
 }
 
 function draw() {
-	noFill();
-
 	let r = map(pos.x, 0, width, 10, 255);
 	let b = map(pos.y, 0, height, 10, 255);
 
 	stroke(r, 10, b, 180);
 	strokeWeight(1);
+	noFill();
 	line(pos.x, pos.y, prev.x, prev.y);
-	if (isDebug) {
-		strokeWeight(3);
-		stroke(255, 20, 100, 100);
-		point(pos.x, pos.y);
-	}
 
 	prev.set(pos);
 
@@ -57,8 +50,4 @@ function draw() {
 	} else if (pos.y < 0) {
 		pos.y = 100;
 	}
-}
-
-function mousePressed() {
-	//isDebug = !isDebug;
 }
