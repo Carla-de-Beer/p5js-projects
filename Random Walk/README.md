@@ -15,8 +15,8 @@ A single random walker whose path colour is based on its screen position.
 
 </br>
 <p align="center">
-  <img src="images/walker-02.png" width="300px"/>
-  <img src="images/walker-01.png" width="300px"/>
+  <img src="images/walker-02.png" width="350px"/>
+  <img src="images/walker-01.png" width="350px"/>
 </p>
 
 ## Random Walker ##
@@ -27,11 +27,11 @@ Multiple random walkers.
 
 </br>
 <p align="center">
-  <img src="images/walkers-04.png" width="300px"/>
-  <img src="images/walkers-03.png" width="300px"/>
+  <img src="images/walkers-04.png" width="350px"/>
+  <img src="images/walkers-03.png" width="350px"/>
 </p>
 
 <p align="center">
-  <img src="images/walkers-02.png" width="300px"/>
-  <img src="images/walkers-01.png" width="300px"/>
+  <img src="images/walkers-02.png" width="350px"/>
+  <img src="images/walkers-01.png" width="350px"/>
 </p>
