@@ -1,4 +1,4 @@
-# Steerin Behaviour with Text #
+# Steering Behaviour with Text #
 
 Steering behaviour with text.
 
