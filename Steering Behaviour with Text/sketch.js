@@ -1,6 +1,6 @@
 // Carla de Beer
 // October 2017
-// Steering behaviours with text.
+// Steering behaviour with text.
 
 // Based on Daniel Shiffman's Coding Train video example:
 // https://www.youtube.com/watch?v=4hA7G3gup-4
