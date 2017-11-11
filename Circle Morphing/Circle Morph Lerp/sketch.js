@@ -34,10 +34,10 @@ function setup() {
 		triPath.push(p5.Vector.lerp(start, end, amt));
 
 		if (angle % 120 === 0) {
-				startA = startA + 120;
-				endA = endA + 120;
-				start = polarToCartesian(radius, startA);
-				end = polarToCartesian(radius, startA);
+			startA = startA + 120;
+			endA = endA + 120;
+			start = polarToCartesian(radius, startA);
+			end = polarToCartesian(radius, startA);
 		}
 	}
 

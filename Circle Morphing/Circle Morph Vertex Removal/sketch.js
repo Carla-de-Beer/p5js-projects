@@ -1,3 +1,10 @@
+// Carla de Beer
+// November 2017
+// Circle morphing (morphing a circle into a triangle, and back).
+
+// Based on Daniel Shiffman's Coding Train video example:
+// https://www.youtube.com/watch?v=0veqAiA61AU
+
 let cirPath = [];
 let spacing = 2;
 let count = 0;
