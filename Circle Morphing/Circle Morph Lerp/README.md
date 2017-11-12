@@ -1,4 +1,4 @@
-# Circle Morphing Lerp #
+# Circle Morph: Lerp #
 
 Circle morphing (morphing a circle into a triangle, and back, through lerping).
 
