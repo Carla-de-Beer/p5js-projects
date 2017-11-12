@@ -1,4 +1,4 @@
-# Circle Morph Vertex Removal #
+# Circle Morph: Vertex Removal #
 
 Circle morphing (morphing a circle into a triangle, and back, through systematic vertex removal).
 
