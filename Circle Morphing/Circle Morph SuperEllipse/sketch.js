@@ -1,4 +1,3 @@
-
 // Carla de Beer
 // November 2017
 // Circle morphing (morphing a circle into a square, and back, via superellipse parametric equations).
@@ -17,14 +16,19 @@ function setup() {
 }
 
 function draw() {
-	background(220);
+	background(245);
 
 	let r = n*120;
 	let b = 255 - n*50;
-  	stroke(r, 0, b);
-	fill(r, 0, b);
 
-	n = map(sin(frameCount*0.5), -1, 1, 1, 2);
+	n = map(sin(frameCount), -1, 1, 1, 2);
+
+	let red = map(sin(frameCount), -1, 1, 39, 255);
+	let green = map(sin(frameCount), -1, 1, 153, 65);
+	let blue = map(sin(frameCount), -1, 1, 180, 75);
+
+	stroke(red, green, blue);
+	fill(red, green, blue);
 
 	push();
 	translate(width/2, height/2);

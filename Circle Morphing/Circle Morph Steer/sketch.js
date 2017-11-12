@@ -24,14 +24,14 @@ function setup() {
 }
 
 function draw() {
-	background(220);
+	background(245);
 
 	isDebug = checkBox.checked();
 
 	push();
 	translate(width/2, height/2);
 	rotate(45);
-	stroke(51);
+	stroke(80, 200);
 	strokeWeight(1);
 	noFill();
 

@@ -16,11 +16,16 @@ function setup() {
 }
 
 function draw() {
-	background(220);
+	background(245);
 	translate(width/2, height/2);
 	noStroke();
 	strokeWeight(1);
-	fill(count, 0, 255-count);
+
+	let red = map(count, 0, cirPath.length, 39, 255);
+	let green = map(count, 0, cirPath.length, 153, 65);
+	let blue = map(count, 0, cirPath.length, 180, 75);
+
+	fill(red, green, blue);
 
 	beginShape(CLOSE);
 		for (let i = 0; i < cirPath.length; ++i) {
@@ -43,8 +48,6 @@ function draw() {
 		v.active = false;
 		count++;
 	}
-
-	//console.log(count);
 
 	if (count >= cirPath.length - 4) {
 		setTimeout(function(){
@@ -69,7 +72,6 @@ function addVectors() {
 		} else {
 			cv.fixed = false;
 		}
-
 		cv.active = true;
 		cirPath.push(cv);
 	}

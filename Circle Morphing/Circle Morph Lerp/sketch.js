@@ -50,7 +50,7 @@ function setup() {
 }
 
 function draw() {
-	background(220);
+	background(245);
 	translate(width/2, height/2);
 	rotate(30);
 	noStroke();
@@ -58,8 +58,11 @@ function draw() {
 	let amt = (sin(theta) + 1)/2;
 	theta += 1;
 
-	let fillColor = map(amt, 0, 1, 25, 255);
-	fill(fillColor, 50, 300 - fillColor, 180);
+	let red = map(sin(theta), -1, 1, 39, 255);
+	let green = map(sin(theta), -1, 1, 153, 65);
+	let blue = map(sin(theta), -1, 1, 180, 75);
+
+	fill(red, green, blue);
 
 	beginShape(CLOSE);
 		for (let i = 0; i < cirPath.length; ++i) {
@@ -82,17 +85,8 @@ function draw() {
 		strokeWeight(0.5);
 		line(outPath[i].x, outPath[i].y, morPath[i].x, morPath[i].y)
 	}
-	
+
 	morPath = [];
-
-	// for (let i = 0; i < cirPath.length; ++i) {
-	// 	ellipse(cirPath[i].x, cirPath[i].y, 5);
-	// }
-
-	// endShape(CLOSE);
-	// for (let i = 0; i < triPath.length; ++i) {
-	// 	ellipse(triPath[i].x, triPath[i].y, 5);
-	// }
 }
 
 function polarToCartesian(r, a) {

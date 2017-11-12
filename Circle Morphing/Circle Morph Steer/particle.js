@@ -19,7 +19,7 @@ class Particle {
 
   drawParticle() {
     noStroke();
-    fill(237, 34, 93);
+    fill(255, 65, 65);
     ellipse(this.pos.x, this.pos.y, 4);
 		noFill();
   }
