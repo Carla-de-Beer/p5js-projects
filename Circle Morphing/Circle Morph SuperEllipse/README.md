@@ -1,4 +1,4 @@
-# Circle Morph SuperEllipse #
+# Circle Morph: SuperEllipse #
 
 Circle morphing (morphing a circle into a square, and back, via superellipse parametric equations).
 
