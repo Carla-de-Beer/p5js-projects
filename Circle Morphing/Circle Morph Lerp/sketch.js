@@ -50,7 +50,7 @@ function setup() {
 }
 
 function draw() {
-	background(255);
+	background(220);
 	translate(width/2, height/2);
 	rotate(30);
 	noStroke();
