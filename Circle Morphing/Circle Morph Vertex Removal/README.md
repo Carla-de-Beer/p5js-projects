@@ -7,5 +7,5 @@ https://www.youtube.com/watch?v=0veqAiA61AU
 
 </br>
 <p align="center">
- <img src="gif/animation.gif" width="500px"/>
+ <img src="gif/animation.gif" width="350px"/>
 </p>
