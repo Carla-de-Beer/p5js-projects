@@ -1,6 +1,6 @@
 // Carla de Beer
 // November 2017
-// Circle morphing (morphing a circle into a triangle, and back).
+// Circle morphing (morphing a circle into a triangle, and back, through lerping).
 
 // Based on Daniel Shiffman's Coding Train video example:
 // https://www.youtube.com/watch?v=u2D4sxh3MTs

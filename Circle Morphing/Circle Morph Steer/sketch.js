@@ -2,7 +2,7 @@
 // November 2017
 // Circle morphing (morphing a circle into a square, and back again, by means of steering).
 
-// Steer and arrive alogorithms based on those by Daniel Shiffman ("Nature of Code").
+// Steer and arrive algorithms based on those by Daniel Shiffman ("Nature of Code").
 
 let cirPath = [];
 let sqrPath = [];
