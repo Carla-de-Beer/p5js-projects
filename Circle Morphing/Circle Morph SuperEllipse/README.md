@@ -7,5 +7,5 @@ http://paulbourke.net/geometry/superellipse/
 
 </br>
 <p align="center">
- <img src="gif/animation.gif" width="500px"/>
+ <img src="gif/animation.gif" width="350px"/>
 </p>
