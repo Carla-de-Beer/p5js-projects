@@ -7,5 +7,5 @@ https://www.youtube.com/watch?v=i2C1hrJMwz0
 
 </br>
 <p align="center">
-  <img src="images/screenShot.png" width="500px"/>
+  <img src="images/screenShot.png" width="750px"/>
 </p>
