@@ -1,4 +1,4 @@
-# 10PRINT#
+# 10PRINT #
 
 The 10PRINT algorithm, consisting of a single line of code, was an extremely concise BASIC program written for the Commodore 64 (https://10print.org).
 
