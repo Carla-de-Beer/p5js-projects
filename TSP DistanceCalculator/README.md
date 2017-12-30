@@ -5,7 +5,7 @@ The sketch dynamically reads in city data from a file and calculates the shortes
 The actual physical distance on the route, calculated as the Haversine distance, is also shown.
 Specifiable parameters: crossover rate, mutation rate, population size, max. no. iterations, elitism generation gap.
 
-This project is the P5js/JavaScript implementation of the [Processing version:](https://github.com/Carla-de-Beer/Processing/tree/master/TSP%20Distance%20Calculators/TSP_Distance_Calculator_With_Map) of the same project.
+This project is the P5js/JavaScript implementation of the [Processing version](https://github.com/Carla-de-Beer/Processing/tree/master/TSP%20Distance%20Calculators/TSP_Distance_Calculator_With_Map) of the same project.
 
 Resources: 
 * City data obtained from: https://gist.github.com/Miserlou/c5cd8364bf9b2420bb29
