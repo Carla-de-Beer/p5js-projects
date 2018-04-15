@@ -28,3 +28,5 @@ The following is a list of the sketches included in this repository:
 * [Steering Behaviour with Text:](https://github.com/Carla-de-Beer/P5js/tree/master/Steering%20Behaviour%20with%20Text) Steering behaviour with text
 * [TSP Distance Calculator:](https://github.com/Carla-de-Beer/P5js/tree/master/TSP%20DistanceCalculator) Using a genetic algorithm to find an optimised solution to the Travelling Salesman Problem
 * ["The Matrix" Digital Rain:](https://github.com/Carla-de-Beer/P5js/tree/master/The%20Matrix%20Digital%20Rain) Simulation of Simulation of "The Matrix"'s Digital Rain.
+  * [Original Version with Various Scripts:](https://github.com/Carla-de-Beer/P5js/tree/master/The%20Matrix%20Digital%20Rain/Original%20Version%20with%20Various%20Scripts) Original version with various scripts
+  * [Dingbats:](https://github.com/Carla-de-Beer/P5js/tree/master/The%20Matrix%20Digital%20Rain/Dingbats) Alternative version with Dingbats and colour effects
