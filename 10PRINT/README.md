@@ -6,3 +6,10 @@ The following are two variations on the 10PRINT algorithm, written in P5js, and 
 
 * [Coloured Pattern Effect](https://github.com/Carla-de-Beer/P5js/tree/master/10PRINT/10PRINT%20Coloured%20Effect)
 * [Gridded Circles](https://github.com/Carla-de-Beer/P5js/tree/master/10PRINT/10PRINT%20Gridded%20Circles)
+
+</br>
+<p align="center">
+  <img src="10PRINT Coloured Effect/images/screenShot.png" width="650px"/>
+  <img src="10PRINT Gridded Circles/images/screenShot.png" width="650px"/>
+</p>
+
