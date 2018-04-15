@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=slmSCEho31g
 
 </br>
 <p align="center">
-  <img src="images/screenShot-01.png" width="350px"/>
-  <img src="images/screenShot-02.png" width="350px"/>
-  <img src="images/screenShot-03.png" width="350px"/>
+  <img src="images/screenShot-01.png" width="650px"/>
+  <img src="images/screenShot-02.png" width="650px"/>
+  <img src="images/screenShot-03.png" width="650px"/>
 </p>
