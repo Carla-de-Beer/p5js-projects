@@ -13,7 +13,8 @@ The following is a list of the sketches included in this repository:
 * [10PRINT:](https://github.com/Carla-de-Beer/P5js/tree/master/10PRINT) Variations on the 10PRINT algorithm
   * [10PRINT: Coloured Effect:](https://github.com/Carla-de-Beer/P5js/tree/master/10PRINT/10PRINT%20Coloured%20Effect) Variations on the 10PRINT algorithm: Coloured pattern effect
   * [10PRINT: Gridded Circles:](https://github.com/Carla-de-Beer/P5js/tree/master/10PRINT/10PRINT%20Gridded%20Circles) Variations on the 10PRINT algorithm: Gridded circles
-* [Chatbot Number Guessing Game:](https://github.com/Carla-de-Beer/P5js/tree/master/Chatbots/Chatbot%20Number%20Guessing%20Game) Using RiveScript to create a chatbot
+* [A* Path Finding Algorithm](https://github.com/Carla-de-Beer/P5js/tree/master/A*%20Path%20Finding%20Algorithm) The A* path finding algorithm with various distance metric options
+* [Chatbot Number Guessing Game:](https://github.com/Carla-de-Beer/P5js/tree/master/Chatbot%20Number%20Guessing%20Game) Using RiveScript to create a chatbot
 * [Circle Morphing:](https://github.com/Carla-de-Beer/P5js/tree/master/Circle%20Morphing) Examples of morphing a circle into a primitive, and back again
   * [Example 1:](https://github.com/Carla-de-Beer/P5js/blob/master/Circle%20Morphing/Circle%20Morph%20Lerp/sketch.js) Morphing a circle into a triangle by means of lerping
   * [Example 2:](https://github.com/Carla-de-Beer/P5js/blob/master/Circle%20Morphing/Circle%20Morph%20Vertex%20Removal/sketch.js) Morphing Morphing a circle into a triangle by means of vertex removal, until only the three triangle points remain
@@ -23,7 +24,6 @@ The following is a list of the sketches included in this repository:
 * [Earthquake Data Visualisation:](https://github.com/Carla-de-Beer/P5js/tree/master/Earthquake%20Data%20Visualisation) Visualisation of earthquake data by means of a Mercator projection
 * [Flower Power:](https://github.com/Carla-de-Beer/P5js/tree/master/Flower%20Power) Creating a relationship between objects and images in P5js
 * [P5js + Requirejs:](https://github.com/Carla-de-Beer/P5js/tree/master/P5js%20%2B%20Requirejs) A simple example illustrating the inclusion of a P5js project with RequireJS
-* [P5js.A*:](https://github.com/Carla-de-Beer/P5js/tree/master/P5js.A*) The A* algorithm in P5js
 * [Random Walks:](https://github.com/Carla-de-Beer/P5js/tree/master/Random%20Walk) Random walks constructed with a random walker capable of a Lévy flight
 * [Steering Behaviour with Text:](https://github.com/Carla-de-Beer/P5js/tree/master/Steering%20Behaviour%20with%20Text) Steering behaviour with text
 * [TSP Distance Calculator:](https://github.com/Carla-de-Beer/P5js/tree/master/TSP%20DistanceCalculator) Using a genetic algorithm to find an optimised solution to the Travelling Salesman Problem
