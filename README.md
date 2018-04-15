@@ -27,4 +27,4 @@ The following is a list of the sketches included in this repository:
 * [Random Walks:](https://github.com/Carla-de-Beer/P5js/tree/master/Random%20Walk) Random walks constructed with a random walker capable of a Lévy flight
 * [Steering Behaviour with Text:](https://github.com/Carla-de-Beer/P5js/tree/master/Steering%20Behaviour%20with%20Text) Steering behaviour with text
 * [TSP Distance Calculator:](https://github.com/Carla-de-Beer/P5js/tree/master/TSP%20DistanceCalculator) Using a genetic algorithm to find an optimised solution to the Travelling Salesman Problem
-* [The Matrix Digital Rain - Dingbats:](https://github.com/Carla-de-Beer/P5js/tree/master/The%20Matrix%20Digital%20Rain%20-%20Dingbats) Simulation of The Matrix's Digital Rain using Dingbats.
+* ["The Matrix" Digital Rain:](https://github.com/Carla-de-Beer/P5js/tree/master/The%20Matrix%20Digital%20Rain) Simulation of Simulation of "The Matrix"'s Digital Rain.
