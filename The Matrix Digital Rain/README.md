@@ -1,4 +1,4 @@
-# The Matrix Digital Rain (Dingbats) #
+# The Matrix Digital Rain#
 
 Simulation of The Matrix's Digital Rain.
 
@@ -7,5 +7,5 @@ https://www.youtube.com/watch?v=S1TQCi9axzg
 
 </br>
 <p align="center">
-  <img src="images/screenShot.png" width="750px"/>
+  <img src="Dingbats/images/screenShot.png" width="750px"/>
 </p>
