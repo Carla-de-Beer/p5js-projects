@@ -3,22 +3,24 @@ body {
     margin: 50px;
 }
 
-h1 {
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+h1, h3 {
+    font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
+    color: #646464;
 }
 
 h6 {
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
+    color: #646464;
 }
 
 p {
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
     font-size: 110%;
     color: #323232;
 }
 
 .output {
-    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
     font-size: 140%;
     color: #646464;
     position: absolute;

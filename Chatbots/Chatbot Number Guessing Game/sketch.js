@@ -1,6 +1,6 @@
 // Carla de Beer
 // October 2017
-// Chatbot number guessing game.
+// A simple Chatbot number guessing game.
 
 // Based on Daniel Shiffman's Coding Train video example:
 // https://www.youtube.com/watch?v=slmSCEho31g
