@@ -14,8 +14,8 @@ https://www.youtube.com/watch?v=mvgcNOX8JGQ
 
 ## Examples generated
 <p align="center">
-  <img src="Circle Morph Lerp/gif/animation.gif" width="350px"/>
-  <img src="Circle Morph Steer/gif/animation.gif" width="350px"/>
-  <img src="Circle Morph SuperEllipse/gif/animation.gif" width="350px"/>
-  <img src="Circle Morph Vertex Removal/gif/animation.gif" width="350px"/>
+  <img src="Circle Morph Lerp/gif/animation.gif" width="300px"/>
+  <img src="Circle Morph Steer/gif/animation.gif" width="300px"/>
+  <img src="Circle Morph SuperEllipse/gif/animation.gif" width="300px"/>
+  <img src="Circle Morph Vertex Removal/gif/animation.gif" width="300px"/>
 </p>
