@@ -17,6 +17,8 @@ function setup() {
   isoY = atan(1 / sqrt(2));
   maxD = dist(0, 0, 200, 200);
 
+  colorMode(RGB);
+
   // Precompute geometries
   for (let z = 0; z < height; z += w) {
     for (let x = 0; x < width; x += w) {
