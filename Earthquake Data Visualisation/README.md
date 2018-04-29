@@ -19,4 +19,3 @@ from the USGS website in order to overcome the CORS issue, or having to read dat
 <p align="center">
   <img src="images/screenShot-01.png"/>
 </p>
-

@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title>Chatbot</title>
 
-      <script src="lib/p5.min.js"></script>
-      <script src="lib/p5.dom.min.js"></script>
-      <script src="sketch.js"></script>
-      <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-              crossorigin="anonymous"></script>
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
+<head>
+  <title>Chatbot</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+  <script src="sketch.js"></script>
+  <script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
 
   <h1>Chatbot Number Guessing Game</h1>
   <h3>Choose an integer value between 0 and 11</h3>
   </br>
 
   <p id="chat">
-    <code>Enter value: </code> <input id="userInput" class="userInput"/>
-      <button id="submit" class="submit">Submit</button>
+    <code>Enter value: </code> <input id="userInput" class="userInput" />
+    <button id="submit" class="submit">Submit</button>
   </p>
 
   <p> <code>Bot reply:  </code>
-      <span id="output" class="output"></span>
+    <span id="output" class="output"></span>
   </p>
 
-  </body>
+</body>
+
 </html>
