@@ -20,6 +20,7 @@ The following is a list of the sketches included in this repository:
   * [Example 2:](https://github.com/Carla-de-Beer/P5js/blob/master/Circle%20Morphing/Circle%20Morph%20Vertex%20Removal/sketch.js) Morphing Morphing a circle into a triangle by means of vertex removal, until only the three triangle points remain
   * [Example 3:](https://github.com/Carla-de-Beer/P5js/blob/master/Circle%20Morphing/Circle%20Morph%20SuperEllipse/sketch.js) Morphing a circle into a square by means of superellipse parametric equations
   * [Example 4:](https://github.com/Carla-de-Beer/P5js/blob/master/Circle%20Morphing/Circle%20Morph%20Steer/sketch.js) Morphing a circle into a square by means of a steer and arrival algorithm
+* [Colour Predictor:](https://github.com/Carla-de-Beer/P5js/tree/master/Colour%20Predictor) Neural network that predicts whether white or black text is better suited to a given coloured background
 * [Cube Wave:](https://github.com/Carla-de-Beer/P5js/tree/master/Cube%20Wave) 3D cube wave
 * [Earthquake Data Visualisation:](https://github.com/Carla-de-Beer/P5js/tree/master/Earthquake%20Data%20Visualisation) Visualisation of earthquake data by means of a Mercator projection
 * [Flower Power:](https://github.com/Carla-de-Beer/P5js/tree/master/Flower%20Power) Creating a relationship between objects and images in P5js
