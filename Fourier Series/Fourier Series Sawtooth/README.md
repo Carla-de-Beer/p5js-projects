@@ -8,7 +8,7 @@ https://en.wikipedia.org/wiki/Fourier_series
 
 </br>
 <p align="center">
-  <img src="images/screenShot-01.png" width="750px"/>
-  <img src="images/screenShot-02.png" width="750px"/>
-  <img src="images/screenShot-03.png" width="750px"/>
+  <img src="images/screenShot-01.png" />
+  <img src="images/screenShot-02.png" />
+  <img src="images/screenShot-03.png" />
 </p>
