@@ -1,0 +1,13 @@
+# Fourier Series
+
+Visualisation of an approximation of a square and sawtooth wave by taking the first *n* terms of its Fourier series.
+
+Based on Daniel Shiffman's Coding Train video example:
+https://www.youtube.com/watch?v=Mm2eYfj0SgA and on
+https://en.wikipedia.org/wiki/Fourier_series
+
+</br>
+<p align="center">
+  <img src="https://github.com/Carla-de-Beer/P5js/blob/master/Fourier%20Series/Fourier%20Series%20Sawtooth/images/screenShot-03.png" width="750px"/>
+    <img src="https://github.com/Carla-de-Beer/P5js/blob/master/Fourier%20Series/Fourier%20Series%20Square/images/screenShot-03.png" width="750px"/>
+</p>
