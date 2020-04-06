@@ -21,9 +21,11 @@ The following is a list of the sketches included in this repository:
   * [Example 4:](https://github.com/Carla-de-Beer/P5js-Projects/blob/master/circle-morphing/circle-morph-steer/sketch.js) Morphing a circle into a square by means of a steer and arrival algorithm.
 * [Colour Predictor:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/colour-predictor) Neural network that predicts whether white or black text is better suited to a given coloured background.
 * [Cube Wave:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/cube-wave) 3D cube wave.
-* [Earthquake Data Visualisation:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/Earthquake%20Data%20Visualisation) Visualisation of earthquake data by means of a Mercator projection.
+* [Earthquake Data Visualisation:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/earthquake-data-visualisation) Visualisation of earthquake data by means of a Mercator projection.
 * [Flower Power:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/flower-power) Creating a relationship between objects and images in P5js.
-* [Fourier Series:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/fourier-series) Approximation of a square and sawtooth wave by taking the first *n* terms of its Fourier series.
+* [Fourier Series:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/fourier-series) Fourier series projects.
+	* [Fourier Series Sawtooth Wave:](https://github.com/Carla-de-Beer/p5js-projects/tree/master/fourier-series/fourier-series-sawtooth) Approximation of a sawtooth wave by taking the first *n* terms of its Fourier series.
+	* [Fourier Series Square Wave:](https://github.com/Carla-de-Beer/p5js-projects/tree/master/fourier-series/fourier-series-square) Approximation of a square wave by taking the first *n* terms of its Fourier series.
 * [Neuroevolution:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/neuroevolution) Neuroevolution projects.
 	* [Flappy Bird:](https://github.com/Carla-de-Beer/P5js-Projects/tree/master/neuroevolution/flappy-bird) Neuroevolution applied to the Flappy Bird game.
 * [P5js + RequireJS:](https://github.com/Carla-de-Beer/P5js/tree/master/P5js-with-requirejs) A simple example illustrating the inclusion of a P5js project with RequireJS.
