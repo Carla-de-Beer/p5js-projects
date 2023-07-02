@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^7.5.0",
-    "eslint-config-p5js": "^1.0.1"
+    "eslint": "^8.39.0",
+    "eslint-config-p5js": "^1.1.0"
   },
   "dependencies": {
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.21"
   }
 }

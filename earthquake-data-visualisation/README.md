@@ -3,9 +3,7 @@
 Visualisation of earthquake data by means of a Mercator projection.
 Data obtained from the US Geological Survey website and the map from MapBox.
 
-
-Based on Daniel Shiffman's Coding Train video example:
-https://www.youtube.com/watch?v=ZiYdOwOrGyc&t=1705s
+Based on Daniel Shiffman's Coding Train video example:https://www.youtube.com/watch?v=ZiYdOwOrGyc&t=1705s.
 
 Resources:
 

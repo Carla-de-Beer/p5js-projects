@@ -4,8 +4,7 @@ Random walks constructed with a random walker capable of a Lévy flight.
 
 Swap out the script files to run the different options.
 
-Based on Daniel Shiffman's Coding Train video example:
-https://www.youtube.com/watch?v=bqF9w9TTfeo
+Based on Daniel Shiffman's Coding Train video example: https://www.youtube.com/watch?v=bqF9w9TTfeo.
 
 ## Random Walker ##
 

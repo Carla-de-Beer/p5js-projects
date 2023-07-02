@@ -5,8 +5,7 @@ Simulation of "The Matrix"'s Digital Rain using different scripts:
 * Cyrillic
 * Hangul
 
-Based on Emily Xie's Coding Train video example:
-https://www.youtube.com/watch?v=S1TQCi9axzg
+Based on Emily Xie's Coding Train video example: https://www.youtube.com/watch?v=S1TQCi9axzg.
 
 ## Examples generated:
 </br>

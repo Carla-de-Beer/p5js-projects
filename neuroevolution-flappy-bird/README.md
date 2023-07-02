@@ -4,8 +4,7 @@ This project demonstrates an attempt to solve the Flappy Bird game by means of a
 
 Each Flappy Bird is created with a neural network and the fittest phenotypes are selected by means of a simple genetic algorithm.
 
-Based on Daniel Shiffman's Coding Train video example:
-https://www.youtube.com/watch?v=c6y21FkaUqw
+Based on Daniel Shiffman's Coding Train video example: https://www.youtube.com/watch?v=c6y21FkaUqw.
 
 </br>
 <p align="center">

@@ -3,8 +3,7 @@
 Visualisation of an approximation of a square and sawtooth wave by taking the first *n* terms of its Fourier series.
 
 Based on Daniel Shiffman's Coding Train video example:
-https://www.youtube.com/watch?v=Mm2eYfj0SgA and on
-https://en.wikipedia.org/wiki/Fourier_series
+https://www.youtube.com/watch?v=Mm2eYfj0SgA and on https://en.wikipedia.org/wiki/Fourier_series,
 
 </br>
 <p align="center">

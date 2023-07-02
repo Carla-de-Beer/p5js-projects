@@ -10,7 +10,7 @@ Examples of morphing a circle into a primitive, and back again.
 The index.html file is provided inside this folder. Swap the various sketch.js file out from within the subfolders to try out the different morphing examples.
 
 Inspired by Golan Levin's circle morphing examples:
-https://www.youtube.com/watch?v=mvgcNOX8JGQ
+https://www.youtube.com/watch?v=mvgcNOX8JGQ.
 
 ## Examples generated
 <p align="center">
